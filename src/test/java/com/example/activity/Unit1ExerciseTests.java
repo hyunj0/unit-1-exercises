@@ -34,8 +34,8 @@ public class Unit1ExerciseTests {
     @Before
     public void setUp() throws Exception {
         // uncomment the following line to pass test 01
-//        mActivity = Robolectric.buildActivity(DeckardActivity.class).create().get();
-//        mAC = Robolectric.buildActivity(DeckardActivity.class).create().start();
+        mActivity = Robolectric.buildActivity(DeckardActivity.class).create().get();
+        mAC = Robolectric.buildActivity(DeckardActivity.class).create().start();
     }
 
     @Test
@@ -139,7 +139,7 @@ public class Unit1ExerciseTests {
         assertTrue("EditTextActivity->LinearLayout[1] should be a Button", buttonView instanceof Button);
         assertTrue("EditTextActivity->LinearLayout[1] should have the id (@+id/button)", buttonIDString.equals("button"));
         Button button = (Button) buttonView;
-        assertTrue("EditTextActivity->LinearLayout[0] should have initial value 'click!'", button.getText().equals("click!"));
+        assertTrue("EditTextActivity->LinearLayout[1] should have initial value 'click!'", button.getText().equals("click!"));
     }
 
     @Test
@@ -154,11 +154,11 @@ public class Unit1ExerciseTests {
         TextView tv = (TextView) editTextLayout.getChildAt(0);
         Button button = (Button) editTextLayout.getChildAt(1);
 
-        for (int i=0; i<10; i++){
-            assertTrue(String.format("Counter should have value %s", i), tv.getText().equals(String.format("%s",i)));
+        for (int i=0; i<10; i++) {
+            assertTrue(String.format("Counter should have value %s", i), tv.getText().equals(String.format("%s", i)));
             button.callOnClick();
         }
 
-
     }
+
 }
